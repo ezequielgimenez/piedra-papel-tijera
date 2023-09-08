@@ -623,7 +623,7 @@ const routes = [
         component: (0, _loser.initResultadoLoser)
     }
 ];
-const BASE_PATH = "desafio-m5";
+const BASE_PATH = "/piedra-papel-tijera";
 function isGithubPages() {
     //Esto verifica si la cadena "github.io" está presente en el dominio obtenido. Si "github.io" está presente en el dominio,
     //la función includes() devuelve true, lo que indica que la página está alojada en GitHub Pages. Si no está presente, devuelve false.
@@ -649,10 +649,9 @@ function initRouter(container) {
             container.appendChild(element);
         }
     }
-    if (location.pathname == "/" || location.pathname == "/desafio-m5/") goTo("/inicio");
+    if (location.pathname == "/piedra-papel-tijera/") goTo("/inicio");
     else handleRoute(location.pathname);
-    // si no usamos onpopstate, al usar las flechas del navegador cambiará la url pero no el handleRoute ya que esos cambios del state no estan siendo escuchados. Con onpopstate, logramos que lo sean.
-    window.onpopstate = function() {
+    window.onpopstate = ()=>{
         handleRoute(location.pathname);
     };
 }
