@@ -1,5 +1,7 @@
 const state = {
-  data: [],
+  data: {
+    list: [],
+  },
 
   listeners: [], //array de funciones
 
@@ -24,10 +26,9 @@ const state = {
     const currentState = this.getState(); ///Obtengo la ultima version del state
     console.log("addItem currenState:", currentState);
     console.log("item", item);
+    currentState.list.push(item); /// Agrego el string al array list de Data{ list:[]}
 
-    //Aca se está tomando el contenido del array currentState, copiándolo en newState, y luego agregando item al final de newState
-    const newState = [...currentState, item];
-    this.setState(newState); // Actualiza el estado con el nuevo valor
+    this.setState(currentState); //cs  este ultimo estado es el que voy a guardar//
   },
 };
 

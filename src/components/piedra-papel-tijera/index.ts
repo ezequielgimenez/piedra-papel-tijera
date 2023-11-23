@@ -1,3 +1,5 @@
+//En esta funcion solamente hago un componente de las 3 imagenes para la page del inicio, que se muestren las 3 imagenes
+
 export function initComponentPPT() {
   customElements.define(
     "ppt-component",

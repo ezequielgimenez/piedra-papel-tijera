@@ -1,5 +1,6 @@
 import { state } from "../../state";
-import { ganador } from "../../pages/play";
+import { initResultados } from "../../pages/resultados";
+import { goTo } from "../../router";
 
 export function initComponentPlay() {
   customElements.define(
@@ -135,7 +136,7 @@ export function initComponentPlay() {
                   "No se hizo clic en ninguna imagen y el contador llegó a cero."
                 );
                 // Recargar la página con esta url
-                window.location.href = "/instrucciones";
+                goTo("/instrucciones");
               }
               contadorElement.remove();
               this.showRandomImage();
@@ -209,8 +210,7 @@ export function initComponentPlay() {
           }
         `;
         divContentMaquina?.appendChild(style);
-
-        ganador();
+        initResultados();
       }
     }
   );
